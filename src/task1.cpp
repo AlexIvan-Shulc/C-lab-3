@@ -7,26 +7,23 @@ int wordCount(char buf[])
 	int count = 0;
 	int inWord = 0;
 	int i = 0;
-	
-	
-	if (buf[strlen(buf) - 1] == '\n') //считывание начала строки
-		buf[strlen(buf) - 1] = 0; //удаление \n
+		
+	if (buf[strlen(buf) - 1] == '\n') //Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ Г­Г Г·Г Г«Г  Г±ГІГ°Г®ГЄГЁ
+		buf[strlen(buf) - 1] = 0; //ГіГ¤Г Г«ГҐГ­ГЁГҐ \n
 
-	while (buf[i])//проход по строке
+	while (buf[i])//ГЇГ°Г®ГµГ®Г¤ ГЇГ® Г±ГІГ°Г®ГЄГҐ
 	{
-		if (buf[i] != ' ' && inWord == 0) //если  пробели и 0 - начало слова
+		if (buf[i] != ' ' && inWord == 0) //ГҐГ±Г«ГЁ  ГЇГ°Г®ГЎГҐГ«ГЁ ГЁ 0 - Г­Г Г·Г Г«Г® Г±Г«Г®ГўГ 
 		{
 			count++;
 			inWord = 1;	
 		
 		}
-		else if (buf[i] == ' ' && inWord == 1)// если пробел и 1 - конец слова
+		else if (buf[i] == ' ' && inWord == 1)// ГҐГ±Г«ГЁ ГЇГ°Г®ГЎГҐГ« ГЁ 1 - ГЄГ®Г­ГҐГ¶ Г±Г«Г®ГўГ 
 		{
 			inWord = 0;					
 		}
 		i++;		
 	}
-	
-	
 	return count;
 }
